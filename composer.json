@@ -1,0 +1,20 @@
+{
+    "name": "ecs/markdown2oxid",
+    "description": "ECS Markdown Module",
+    "type": "oxideshop-module",
+    "keywords": ["oxid", "modules", "eShop"],
+    "homepage": "https://ecomstyle.de/",
+    "license": [
+        "GPL-3.0-only"
+    ],
+    "extra": {
+        "oxideshop": {
+            "target-directory": "ecs/Markdown2Oxid"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Ecs\\Markdown2Oxid\\": "../../../source/modules/ecs/Markdown2Oxid"
+        }
+    }
+}
