@@ -32,15 +32,19 @@ $aModule = array(
     'id'           => 'ecs_markdown2oxid',
     'title'        => '<strong style="color:#04B431;">e</strong><strong>ComStyle.de</strong>:  <i>Markdown2Oxid</i>',
     'description'  => $sdesc,
-    'version'      => '2.0',
+    'version'      => '2.1',
     'thumbnail'    => 'ecs.png',
     'author'       => '<strong style="font-size: 17px;color:#04B431;">e</strong><strong style="font-size: 16px;">ComStyle.de</strong>',
     'email'        => 'info@ecomstyle.de',
     'url'          => 'https://ecomstyle.de',
     'extend'       =>  array(
-        \OxidEsales\Eshop\Core\UtilsView::class                             => Ecs\Markdown2Oxid\Core\UtilsView::class,
-        \OxidEsales\Eshop\Application\Controller\ContentController::class   => Ecs\Markdown2Oxid\Controller\ContentController::class,
-        \OxidEsales\Eshop\Application\Model\Article::class                  => Ecs\Markdown2Oxid\Model\Article::class,
+        \OxidEsales\Eshop\Core\UtilsView::class                                 => Ecs\Markdown2Oxid\Core\UtilsView::class,
+        \OxidEsales\Eshop\Application\Controller\ContentController::class       => Ecs\Markdown2Oxid\Controller\ContentController::class,
+        \OxidEsales\Eshop\Application\Controller\ArticleListController::class   => Ecs\Markdown2Oxid\Controller\ArticleListController::class,
+        \OxidEsales\Eshop\Application\Model\Article::class                      => Ecs\Markdown2Oxid\Model\Article::class,
+    ),
+    'blocks' => array(
+        array('template' => 'page/list/list.tpl', 'block'=>'page_list_listhead', 'file'=>'/views/blocks/ecs_page_list_listhead.tpl'),
     ),
     'settings'          => array(
         array('group' => 'ecs_main', 'name' => 'ecs_pdextra', 'type' => 'bool', 'value' => false),

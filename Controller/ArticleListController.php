@@ -20,11 +20,10 @@
 namespace Ecs\Markdown2Oxid\Controller;
 use \OxidEsales\Eshop\Core\Registry;
 
-class ContentController extends ContentController_parent {
+class ArticleListController extends ArticleListController_parent {
 
-	public function getParsedContent() {
-		$oUtilsView = Registry::getUtilsView();
-		return $oUtilsView->parseThroughSmarty($oUtilsView->markitdown($this->getContent()->oxcontents__oxcontent->value), $this->getContent()->getId(), null, true);
+	public function markitdown($desc) {
+		return Registry::getUtilsView()->markitdown($desc);
 	}
 
 }

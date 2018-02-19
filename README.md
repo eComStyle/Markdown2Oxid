@@ -5,7 +5,7 @@ Markdown 2 Oxid
 OXID eShop 6
 
 ### Features
-Markdown zur Formatierung von Artikel-Langbeschreibung und CMS-Seiten
+Markdown zur Formatierung von Artikel- / Kategorie-Langbeschreibung und CMS-Seiten
 
 ### Installation (Kurzform)
 `composer require ecs/markdown2oxid:dev-master`
@@ -15,6 +15,11 @@ Markdown zur Formatierung von Artikel-Langbeschreibung und CMS-Seiten
 - Wechseln Sie in Ihr OXID-Projektverzeichnis, in dem sich die Datei composer.json sowie die source- und vendor-Ordner befinden.
 - Führen Sie dort folgenden Befehl aus: `composer require ecs/markdown2oxid:dev-master`
 - Loggen Sie sich in Ihren Shop-Admin ein und aktivieren das neue Modul unter Erweiterungen/Module.
+
+### Bedienung
+- Vorhandenen WYSIWYG Editor deaktivieren oder bei aktiven WYSIWYG Editor in den Quelltext-Modus wechseln ( Button `</>` ).
+- Die Lanbeschreibung / CMS-Seite mit `{md}` beginnen, um Markdown zu aktivieren (Kürzel wird nicht im Shop angezeigt).
+- Texte mit Markdown formatieren: <https://ecomstyle.de/blog/markdown2oxid-doku/>
 
 ### License
 This program is free software: you can redistribute it and/or modify
