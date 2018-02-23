@@ -23,7 +23,7 @@ Markdown wird aktiviert, indem die erste Teile einer Artikel-Langbeschreibung od
 <pre>{md}</pre>
 Mit dem eigentlichen Inhalt wird in Zeile 2 begonnen, dier erste Zeile erscheint nicht auf der Website.<br>
 Zur Vereinfachung k&ouml;nnen zus&auml;tzlich k&ouml;nnen folgende Platzhalter verwendet werden:
-<pre>{img} -> https://shopurl.de/out/pictures/ddmedia/
+<pre>{img} -> https://shopurl.de/out/pictures/
 {media} -> https://shopurl.de/out/media/
 {shop} -> https://shopurl.de/</pre>';
 
@@ -32,7 +32,7 @@ $aModule = array(
     'id'           => 'ecs_markdown2oxid',
     'title'        => '<strong style="color:#04B431;">e</strong><strong>ComStyle.de</strong>:  <i>Markdown2Oxid</i>',
     'description'  => $sdesc,
-    'version'      => '2.1',
+    'version'      => '2.2',
     'thumbnail'    => 'ecs.png',
     'author'       => '<strong style="font-size: 17px;color:#04B431;">e</strong><strong style="font-size: 16px;">ComStyle.de</strong>',
     'email'        => 'info@ecomstyle.de',

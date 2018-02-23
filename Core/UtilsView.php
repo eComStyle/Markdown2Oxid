@@ -27,11 +27,16 @@ class UtilsView extends UtilsView_parent {
 			return $value;
 		$myConfig = Registry::getConfig();
 		$pdextra = $myConfig->getConfigParam('ecs_pdextra');
-		$value = str_replace("{md}", "", $value);
-		$value = str_replace("{img}", $myConfig->getOutUrl() . 'pictures/ddmedia/', $value);
-		$value = str_replace("{media}", $myConfig->getOutUrl() . 'media/', $value);
-		$value = str_replace("{shop}", $myConfig->getShopUrl(), $value);
-		$value = str_replace("__", "§US§", $value);
+
+		/* Platzhalter ersetzen */
+		$imgurl = $myConfig->getOutUrl() . 'pictures/';
+		$mediaurl = $myConfig->getOutUrl() . 'media/';
+		$shopurl = $myConfig->getShopUrl();
+		$search = array('{md}', '{img}', '{media}', '{shop}', '___', '__');
+		$replace = array('', $imgurl, $mediaurl, $shopurl, '***', '§US§');
+		$value = str_replace($search, $replace, $value);
+
+		/* Parsedown */
 		require_once ('Parsedown.php');
 		if ($pdextra) {
 			require_once ('ParsedownExtra.php');
@@ -41,10 +46,11 @@ class UtilsView extends UtilsView_parent {
 			$Parsedown = new \Parsedown();
 		}
 		$value = $Parsedown->text($value);
-		$value = str_replace("§US§", "__", $value);
-		$value = str_replace("-&gt;", "->", $value);
-		$value = str_replace("<table>", '<table class="table">', $value);
-		return $value;
+
+		/* Korrektur für Smarty Tags */
+		$search = array('§US§', '-&gt;');
+		$replace = array('__', '->');
+		return str_replace($search, $replace, $value);
 	}
 
 }
