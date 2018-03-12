@@ -48,8 +48,8 @@ class UtilsView extends UtilsView_parent {
 		$value = $Parsedown->text($value);
 
 		/* Korrektur für Smarty Tags */
-		$search = array('§US§', '-&gt;');
-		$replace = array('__', '->');
+		$search = array('§US§', '-&gt;', '<table>');
+		$replace = array('__', '->', '<table class="table">');
 		return str_replace($search, $replace, $value);
 	}
 
