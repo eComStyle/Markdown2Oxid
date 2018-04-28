@@ -8,12 +8,12 @@ OXID eShop 6
 Markdown zur Formatierung von Artikel- / Kategorie-Langbeschreibung und CMS-Seiten
 
 ### Installation (Kurzform)
-`composer require ecs/markdown2oxid:dev-master`
+`composer require ecs/markdown2oxid`
 
 ### Installation (Langform)
 - Erstellen Sie via SSH-Client eine Verbindung mit dem Server, auf dem Ihr OXID eShop liegt.
 - Wechseln Sie in Ihr OXID-Projektverzeichnis, in dem sich die Datei composer.json sowie die source- und vendor-Ordner befinden.
-- Führen Sie dort folgenden Befehl aus: `composer require ecs/markdown2oxid:dev-master`
+- Führen Sie dort folgenden Befehl aus: `composer require ecs/markdown2oxid`
 - Loggen Sie sich in Ihren Shop-Admin ein und aktivieren das neue Modul unter Erweiterungen/Module.
 
 ### Bedienung
