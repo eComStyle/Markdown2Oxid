@@ -16,8 +16,10 @@
  *    You should have received a copy of the GNU General Public License
  *    along with this program.  If not, see {http://www.gnu.org/licenses/}.
  */
+
+$sLangName = 'English';
 $aLang = array(
-    'charset'                       => 'ISO-8859-15',
+    'charset'                       => 'UTF-8',
     'SHOP_MODULE_GROUP_ecs_main'    => 'Settings',
     'SHOP_MODULE_ecs_pdextra'       => 'Activate Markdown Extra ( https://michelf.ca/projects/php-markdown/extra/ )',
 );
