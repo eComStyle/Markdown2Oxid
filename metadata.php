@@ -32,7 +32,7 @@ $aModule = array(
     'id'           => 'ecs_markdown2oxid',
     'title'        => '<strong style="color:#04B431;">e</strong><strong>ComStyle.de</strong>:  <i>Markdown2Oxid</i>',
     'description'  => $sdesc,
-    'version'      => '2.3.2',
+    'version'      => '2.3.3',
     'thumbnail'    => 'ecs.png',
     'author'       => '<strong style="font-size: 17px;color:#04B431;">e</strong><strong style="font-size: 16px;">ComStyle.de</strong>',
     'email'        => 'info@ecomstyle.de',

@@ -27,28 +27,11 @@ class Article extends Article_parent
 
     public function getLongDescription()
     {
-        if ($this->_oLongDesc === null) {
-            // initializing
-            $this->_oLongDesc = new \OxidEsales\Eshop\Core\Field();
-            // choosing which to get..
-            $sOxid     = $this->getId();
-            $sViewName = getViewName('oxartextends', $this->getLanguage());
-            $oDb       = \OxidEsales\Eshop\Core\DatabaseProvider::getDb();
-            $sDbValue  = $oDb->getOne("select oxlongdesc from {$sViewName} where oxid = " . $oDb->quote($sOxid));
-            // Start Markdown ///////////////////////////////////////////////////////////
-            $sDbValue = Registry::getUtilsView()->markitdown($sDbValue);
-            // Ende Markdown ///////////////////////////////////////////////////////////
-            if ($sDbValue != false) {
-                $this->_oLongDesc->setValue($sDbValue, \OxidEsales\Eshop\Core\Field::T_RAW);
-            } elseif ($this->oxarticles__oxparentid->value) {
-                if (!$this->isAdmin() || $this->_blLoadParentData) {
-                    $oParent = $this->getParentArticle();
-                    if ($oParent) {
-                        $this->_oLongDesc->setValue($oParent->getLongDescription()->getRawValue(), \OxidEsales\Eshop\Core\Field::T_RAW);
-                    }
-                }
-            }
-        }
+        $oUtilsView       = Registry::getUtilsView();
+        $ret              = parent::getLongDescription();
+        $ret              = $oUtilsView->markitdown($ret);
+        $this->_oLongDesc = new \OxidEsales\Eshop\Core\Field();
+        $this->_oLongDesc->setValue($ret, \OxidEsales\Eshop\Core\Field::T_RAW);
         return $this->_oLongDesc;
     }
 }
